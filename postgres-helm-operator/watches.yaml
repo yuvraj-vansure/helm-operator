@@ -3,5 +3,3 @@
   group: postgres.example.com
   kind: Postgres
   chart: helm-charts/postgres-chart
-  overrideValues:
-    image: $RELATED_IMAGE_POSTGRESQL
