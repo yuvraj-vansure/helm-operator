@@ -16,7 +16,7 @@ spec:
       containers:
         - name: postgres-helm-operator
           # Replace this with the built image name
-          image: quay.io/opentestlabs/postgresql-helm-operator:v0.0.1
+          image: quay.io/rhm_samples/postgresql-helm-operator:v0.0.1
           imagePullPolicy: Always
           env:
             - name: WATCH_NAMESPACE

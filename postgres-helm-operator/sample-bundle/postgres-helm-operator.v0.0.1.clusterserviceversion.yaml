@@ -59,11 +59,11 @@ metadata:
     capabilities: Basic Install
     categories: "Database"
     description: "Postgresql Operator to deploy a Postgresql DB"
-    containerImage: quay.io/rmp-partner/postgresql-helm-operator:v0.0.1
+    containerImage: quay.io/rhm_samples/postgresql-helm-operator:v0.0.1
     createdAt: 2020-03-05T12:59:59Z
     support: OpenLabs
     certified: "false"
-    repository: https://github.com/rmp-partner/postgres-helm-operator
+    repository: https://github.com/rhm-samples/helm-operator.git
   name: postgres-helm-operator.v0.0.1
   namespace: Placeholder
 spec:
@@ -119,7 +119,7 @@ spec:
                   value: postgres-helm-operator
                 - name: RELATED_IMAGE_POSTGRESQL
                   value: registry.access.redhat.com/rhscl/postgresql-10-rhel7
-                image: quay.io/opentestlabs/postgresql-helm-operator:v0.0.1
+                image: quay.io/rhm_samples/postgresql-helm-operator:v0.0.1
                 imagePullPolicy: Always
                 name: postgres-helm-operator
                 resources: {}
@@ -214,7 +214,7 @@ spec:
   - database
   links:
   - name: Postgresql
-    url: https://www.ibm.com/in-en
+    url: https://www.postgresql.org/
   maintainers:
   - name: ExampleCo
     email: support@example.com
