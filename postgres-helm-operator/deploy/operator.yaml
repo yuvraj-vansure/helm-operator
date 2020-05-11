@@ -15,7 +15,7 @@ spec:
       serviceAccountName: postgres-helm-operator
       containers:
         - name: postgres-helm-operator
-          # Replace this with the built image name
+          # Replace operator image URL with Published Image in Connect (registry.redhat.connect/etc)
           image: quay.io/rhm_samples/postgresql-helm-operator:v0.0.1
           imagePullPolicy: Always
           env:
@@ -29,5 +29,3 @@ spec:
                   fieldPath: metadata.name
             - name: OPERATOR_NAME
               value: "postgres-helm-operator"
-            - name: RELATED_IMAGE_POSTGRESQL
-              value: registry.access.redhat.com/rhscl/postgresql-10-rhel7
