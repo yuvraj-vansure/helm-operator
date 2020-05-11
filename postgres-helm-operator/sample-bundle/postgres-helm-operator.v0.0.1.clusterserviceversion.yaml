@@ -1,0 +1,226 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: ClusterServiceVersion
+metadata:
+  annotations:
+    alm-examples: |-
+      [
+        {
+          "apiVersion": "postgres.example.com/v1alpha1",
+          "kind": "Postgres",
+          "metadata": {
+            "name": "example-postgres"
+          },
+          "spec": {
+            "affinity": {},
+            "container": {
+              "name": "primary",
+              "port": 5432
+            },
+            "fullnameOverride": "",
+            "image": "registry.access.redhat.com/rhscl/postgresql-10-rhel7",
+            "imagePullSecrets": [],
+            "ingress": {
+              "annotations": {},
+              "enabled": false,
+              "hosts": [
+                {
+                  "host": "chart-example.local",
+                  "paths": []
+                }
+              ],
+              "tls": []
+            },
+            "name": "primary",
+            "nameOverride": "",
+            "nodeSelector": {},
+            "podSecurityContext": {},
+            "pv": {
+              "storage": "2Gi"
+            },
+            "pvc": {
+              "name": "primary-pvc"
+            },
+            "replicaCount": 1,
+            "resources": {},
+            "securityContext": {},
+            "service": {
+              "port": 80,
+              "type": "ClusterIP"
+            },
+            "serviceAccount": {
+              "annotations": {},
+              "create": true,
+              "name": null
+            },
+            "tolerations": []
+          }
+        }
+      ]
+    capabilities: Basic Install
+    categories: "Database"
+    description: "Postgresql Operator to deploy a Postgresql DB"
+    containerImage: quay.io/rmp-partner/postgresql-helm-operator:v0.0.1
+    createdAt: 2020-03-05T12:59:59Z
+    support: OpenLabs
+    certified: "false"
+    repository: https://github.com/rmp-partner/postgres-helm-operator
+  name: postgres-helm-operator.v0.0.1
+  namespace: Placeholder
+spec:
+  icon:
+  - base64data: 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
+    mediatype: image/png
+  apiservicedefinitions: {}
+  customresourcedefinitions:  
+    owned:
+    - kind: Postgres
+      name: postgres.postgres.example.com
+      version: v1alpha1
+      description: Deploy Postgresql 
+      displayName: Deploy Postgresql
+      resources:
+        - kind: Service
+          name: ''
+          version: v1
+        - kind: Pod
+          name: ''
+          version: v1
+        - kind: Deployment
+          name: ''
+          version: v1
+  description: Postgresql Deployment
+  displayName: Postgres Helm Operator 
+  install:
+    spec:
+      deployments:
+      - name: postgres-helm-operator
+        spec:
+          replicas: 1
+          selector:
+            matchLabels:
+              name: postgres-helm-operator
+          strategy: {}
+          template:
+            metadata:
+              labels:
+                name: postgres-helm-operator
+            spec:
+              containers:
+              - env:
+                - name: WATCH_NAMESPACE
+                  valueFrom:
+                    fieldRef:
+                      fieldPath: metadata.annotations['olm.targetNamespaces']
+                - name: POD_NAME
+                  valueFrom:
+                    fieldRef:
+                      fieldPath: metadata.name
+                - name: OPERATOR_NAME
+                  value: postgres-helm-operator
+                - name: RELATED_IMAGE_POSTGRESQL
+                  value: registry.access.redhat.com/rhscl/postgresql-10-rhel7
+                image: quay.io/opentestlabs/postgresql-helm-operator:v0.0.1
+                imagePullPolicy: Always
+                name: postgres-helm-operator
+                resources: {}
+              serviceAccountName: postgres-helm-operator
+      permissions:
+      - rules:
+        - apiGroups:
+          - ""
+          resources:
+          - namespaces
+          verbs:
+          - get
+        - apiGroups:
+          - ""
+          resources:
+          - configmaps
+          - secrets
+          verbs:
+          - '*'
+        - apiGroups:
+          - ""
+          resources:
+          - events
+          verbs:
+          - create
+        - apiGroups:
+          - ""
+          resources:
+          - persistentvolumeclaims
+          - serviceaccounts
+          - services
+          verbs:
+          - '*'
+        - apiGroups:
+          - apps
+          resources:
+          - deployments
+          verbs:
+          - '*'
+        - apiGroups:
+          - monitoring.coreos.com
+          resources:
+          - servicemonitors
+          verbs:
+          - get
+          - create
+        - apiGroups:
+          - apps
+          resourceNames:
+          - postgres-helm-operator
+          resources:
+          - deployments/finalizers
+          verbs:
+          - update
+        - apiGroups:
+          - ""
+          resources:
+          - pods
+          verbs:
+          - get
+        - apiGroups:
+          - apps
+          resources:
+          - replicasets
+          - deployments
+          verbs:
+          - get
+        - apiGroups:
+          - postgres.example.com
+          resources:
+          - '*'
+          verbs:
+          - create
+          - delete
+          - get
+          - list
+          - patch
+          - update
+          - watch
+        serviceAccountName: postgres-helm-operator
+    strategy: deployment
+  installModes:
+  - supported: true
+    type: OwnNamespace
+  - supported: true
+    type: SingleNamespace
+  - supported: false
+    type: MultiNamespace
+  - supported: true
+    type: AllNamespaces
+  keywords:
+  - database
+  links:
+  - name: Postgresql
+    url: https://www.ibm.com/in-en
+  maintainers:
+  - name: ExampleCo
+    email: support@example.com
+  maturity: alpha
+  provider:
+    name: ExampleCo
+  replaces: postgres-helm-operator.v0.0.0
+  version: 0.0.1
+

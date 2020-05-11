@@ -1,0 +1,26 @@
+apiVersion: postgres.example.com/v1alpha1
+kind: Postgres
+metadata:
+  name: example-postgres
+spec:
+  # Default values copied from <project_dir>/helm-charts/postgres-chart/values.yaml
+  
+  container:
+    name: primary
+    port: 5432
+  fullnameOverride: ""
+  image: registry.access.redhat.com/rhscl/postgresql-10-rhel7
+  imagePullSecrets: []
+  name: primary
+  nameOverride: ""
+  podSecurityContext: {}
+  pv:
+    storage: 2Gi
+  pvc:
+    name: primary-pvc
+  replicaCount: 1
+  resources: {}
+  securityContext: {}
+  service:
+    port: 80
+    type: ClusterIP 
