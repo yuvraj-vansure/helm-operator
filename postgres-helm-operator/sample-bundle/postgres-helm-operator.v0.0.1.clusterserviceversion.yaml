@@ -118,7 +118,7 @@ spec:
                 - name: OPERATOR_NAME
                   value: postgres-helm-operator
                 - name: RELATED_IMAGE_POSTGRESQL
-                  value: registry.access.redhat.com/rhscl/postgresql-10-rhel7
+                  value: registry.access.redhat.com/rhscl/postgresql-10-rhel7:1
                 image: quay.io/rhm_samples/postgresql-helm-operator:v0.0.1
                 imagePullPolicy: Always
                 name: postgres-helm-operator
