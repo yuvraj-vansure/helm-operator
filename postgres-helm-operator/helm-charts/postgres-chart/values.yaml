@@ -2,7 +2,10 @@ container:
   name: primary
   port: 5432
 fullnameOverride: ""
-image: registry.access.redhat.com/rhscl/postgresql-10-rhel7
+image: 
+  registry: registry.access.redhat.com 
+  repository: rhscl/postgresql-10-rhel7
+  tag: 1
 imagePullSecrets: []
 name: primary
 nameOverride: ""
