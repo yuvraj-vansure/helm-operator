@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-helm-operator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: postgres-helm-operator
+  template:
+    metadata:
+      labels:
+        name: postgres-helm-operator
+    spec:
+      serviceAccountName: postgres-helm-operator
+      containers:
+        - name: postgres-helm-operator
+          # Replace operator image URL with Published Image in Connect (registry.redhat.connect/etc)
+          image: quay.io/rhm_samples/postgresql-helm-operator:v0.0.1
+          imagePullPolicy: Always
+          env:
+            - name: WATCH_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: OPERATOR_NAME
+              value: "postgres-helm-operator"
