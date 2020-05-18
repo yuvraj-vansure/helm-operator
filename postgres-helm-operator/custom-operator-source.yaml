@@ -1,7 +1,7 @@
 apiVersion: operators.coreos.com/v1
 kind: OperatorSource
 metadata:
-  name: rmp-partner
+  name: rhm_samples
 spec:
   displayName: RHM Samples
   endpoint: https://quay.io/cnr
