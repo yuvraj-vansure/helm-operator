@@ -61,7 +61,7 @@ metadata:
     description: "Postgresql Operator to deploy a Postgresql DB"
     containerImage: quay.io/rhm_samples/postgresql-helm-operator:v0.0.1
     createdAt: 2020-03-05T12:59:59Z
-    support: OpenLabs
+    support: ExampleCo
     certified: "false"
     repository: https://github.com/rhm-samples/helm-operator.git
   name: postgres-helm-operator.v0.0.1
