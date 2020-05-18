@@ -213,8 +213,8 @@ spec:
   keywords:
   - database
   links:
-  - name: Postgresql
-    url: https://www.postgresql.org/
+  - name: ExampleCo
+    url: https://www.exampleco.com/
   maintainers:
   - name: ExampleCo
     email: support@example.com
