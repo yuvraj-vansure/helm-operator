@@ -1,9 +1,0 @@
-apiVersion: operators.coreos.com/v1
-kind: OperatorSource
-metadata:
-  name: rhm-samples
-spec:
-  displayName: RHM Samples
-  endpoint: https://quay.io/cnr
-  registryNamespace: rhm_samples
-  type: appregistry
