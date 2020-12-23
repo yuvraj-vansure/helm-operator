@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    control-plane: mvc-db-app-operator
+  name: system
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mvc-db-app-operator  
+  labels:
+    control-plane: mvc-db-app-operator
+spec:
+  selector:
+    matchLabels:
+      control-plane: mvc-db-app-operator
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        control-plane: mvc-db-app-operator
+    spec:
+      serviceAccountName: mvc-db-app-operator
+      containers:
+      - image: REPLACE_IMAGE
+        imagePullPolicy: Always
+        args:
+        - "--enable-leader-election"
+        - "--leader-election-id=mvc-db-app-operator"
+        name: manager
+        env:
+          - name: WATCH_NAMESPACE
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace
+          - name: POD_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
+          - name: OPERATOR_NAME
+            value: "mvc-db-app-operator"          
+      terminationGracePeriodSeconds: 10

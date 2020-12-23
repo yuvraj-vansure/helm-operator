@@ -1,0 +1,6 @@
+# Use the 'create api' subcommand to add watches to this file.
+- group: example.com
+  version: v1alpha1
+  kind: MvcDb
+  chart: helm-charts/mvc-db-app  
+# +kubebuilder:scaffold:watch
