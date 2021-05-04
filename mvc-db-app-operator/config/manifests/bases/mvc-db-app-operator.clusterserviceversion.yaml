@@ -1,0 +1,46 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: ClusterServiceVersion
+metadata:
+  annotations:
+    alm-examples: '[]'
+    capabilities: Basic Install
+    operators.operatorframework.io/builder: operator-sdk-v1.2.0
+    operators.operatorframework.io/project_layout: helm.sdk.operatorframework.io/v1
+  name: mvc-db-app-operator.vX.Y.Z
+  namespace: placeholder
+spec:
+  apiservicedefinitions: {}
+  customresourcedefinitions: {}
+  description: This operator will deploy a multi-image application consisting of MongoDB,Guestbook Frontend and Guestbook Backend
+  displayName: MVC-DB-APP Operator
+  icon:
+  - base64data: ""
+    mediatype: ""
+  install:
+    spec:
+      deployments: null
+    strategy: ""
+  installModes:
+  - supported: false
+    type: OwnNamespace
+  - supported: false
+    type: SingleNamespace
+  - supported: false
+    type: MultiNamespace
+  - supported: true
+    type: AllNamespaces
+  keywords:
+  - mongo
+  - mvc-db-app-operator
+  - frontend
+  - backend
+  links:
+  - name: Mvc Db App Operator
+    url: https://mvc-db-app-operator.domain
+  maintainers:
+  - email: edge@us.ibm.com
+    name: IBM-Edge
+  maturity: alpha
+  provider:
+    name: IBM Edge
+  version: 0.0.0
