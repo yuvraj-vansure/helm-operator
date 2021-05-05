@@ -1,0 +1,13 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: mvc-db-app-operator
+  namespace: openshift-marketplace
+spec:
+  sourceType: grpc
+  image: quay.io/yuvan/mvc-db-app-operator-index-1:v0.0.1
+  displayName: Mvc DB App Operator
+  publisher: Red Hat Partner
+  updateStrategy:
+    registryPoll:
+      interval: 5m
